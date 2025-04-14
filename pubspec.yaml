@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   get: ^4.7.2
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -18,3 +19,54 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+          weight: 400
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-Thin.ttf
+          weight: 100
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-Light.ttf
+          weight: 300
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-Medium.ttf
+          weight: 500
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-ExtraBold.ttf
+          weight: 800
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/poppins/Poppins-Black.ttf
+          weight: 900
+          style: normal
+        - asset: assets/fonts/poppins/Poppins-BlackItalic.ttf
+          weight: 900
+          style: italic
