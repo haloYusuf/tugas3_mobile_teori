@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:tugas3_mobile_teori/app/modules/home/home_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/login/login_view.dart';
+import 'package:tugas3_mobile_teori/app/modules/main/main_view.dart';
 import 'package:tugas3_mobile_teori/app/routes/route_name.dart';
 
 class RoutePage {
@@ -10,8 +10,8 @@ class RoutePage {
       page: () => LoginView(),
     ),
     GetPage(
-      name: RouteName.home,
-      page: () => HomeView(),
+      name: RouteName.main,
+      page: () => MainView(),
     ),
   ];
 }

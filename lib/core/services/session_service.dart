@@ -10,14 +10,14 @@ class SessionService {
     return _storage.read(_isLoggedIn) ?? false;
   }
 
-  void login({
+  Future login({
     required String username,
   }) async {
     await _storage.write(_username, username);
     await _storage.write(_isLoggedIn, true);
   }
 
-  void logout() async {
+  Future logout() async {
     await _storage.remove(_username);
     await _storage.write(_isLoggedIn, false);
   }

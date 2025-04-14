@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:tugas3_mobile_teori/app/routes/route_name.dart';
 import 'package:tugas3_mobile_teori/app/routes/route_page.dart';
 import 'package:tugas3_mobile_teori/core/services/session_service.dart';
+import 'package:tugas3_mobile_teori/core/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,10 +24,8 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'MultiApp',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Poppins',
-      ),
-      initialRoute: session.isLoggedIn() ? RouteName.home : RouteName.login,
+      theme: AppTheme.lightTheme,
+      initialRoute: session.isLoggedIn() ? RouteName.main : RouteName.login,
       getPages: RoutePage.routes,
     );
   }
