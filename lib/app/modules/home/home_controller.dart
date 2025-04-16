@@ -6,6 +6,13 @@ import 'package:tugas3_mobile_teori/core/services/session_service.dart';
 
 class HomeController extends GetxController {
   final _session = SessionService();
+  final _listRoute = [
+    RouteName.stopwatch,
+    RouteName.number,
+    RouteName.lbsTracking,
+    RouteName.timeConvert,
+    RouteName.siteRecommend,
+  ];
 
   //Handle All Content
   String getHeaderContent() {
@@ -17,7 +24,9 @@ class HomeController extends GetxController {
     required String title,
   }) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        Get.toNamed(_listRoute[index]);
+      },
       child: Text(
         title,
       ),
