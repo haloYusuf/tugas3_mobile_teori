@@ -25,7 +25,10 @@ class HomeController extends GetxController {
   }) {
     return ElevatedButton(
       onPressed: () {
-        Get.toNamed(_listRoute[index]);
+        Get.toNamed(
+          _listRoute[index],
+          preventDuplicates: false,
+        );
       },
       child: Text(
         title,

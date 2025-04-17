@@ -5,6 +5,7 @@ class SessionService {
 
   static const _isLoggedIn = 'is_logged_in';
   static const _username = 'username';
+  static const _stopwatchState = 'stopwatch_state';
 
   bool isLoggedIn() {
     return _storage.read(_isLoggedIn) ?? false;
@@ -20,9 +21,18 @@ class SessionService {
   Future logout() async {
     await _storage.remove(_username);
     await _storage.write(_isLoggedIn, false);
+    await _storage.remove(_stopwatchState);
   }
 
   String getUsername() {
     return _storage.read(_username) ?? '';
+  }
+
+  Future saveStopwatchState(Map<String, dynamic> state) async {
+    await _storage.write(_stopwatchState, state);
+  }
+
+  Map<String, dynamic>? getStopwatchState() {
+    return _storage.read(_stopwatchState);
   }
 }
