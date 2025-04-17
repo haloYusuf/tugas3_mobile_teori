@@ -82,7 +82,7 @@ class NumberView extends StatelessWidget {
                 return Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(0.2),
+                    color: Colors.green.withAlpha(20),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Column(

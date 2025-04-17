@@ -8,7 +8,7 @@ class AboutView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final SessionService _sessionService = Get.find<SessionService>();
+    final SessionService sessionService = Get.find<SessionService>();
 
     List<AboutModel> helpContent = AboutModel.getHelpContent();
 
@@ -34,7 +34,7 @@ class AboutView extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           Get.back();
-                          _sessionService.logout().then(
+                          sessionService.logout().then(
                             (v) {
                               Get.offAllNamed('/login');
                             },
@@ -63,22 +63,22 @@ class AboutView extends StatelessWidget {
               icon: const Icon(Icons.logout),
             ),
           ],
-          backgroundColor: Colors.green,
           bottom: TabBar(
             isScrollable: true,
-            indicatorColor: Colors.white,
             indicatorWeight: 4.0,
             labelColor: Colors.white,
             unselectedLabelColor: Colors.black54,
             tabs: helpContent
-                .map((content) => Tab(
-                      text: content.title,
-                    ))
+                .map(
+                  (content) => Tab(
+                    text: content.title,
+                  ),
+                )
                 .toList(),
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(12.0),
           child: TabBarView(
             children: helpContent.map((content) {
               return SingleChildScrollView(

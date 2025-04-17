@@ -18,7 +18,7 @@ class LbsTrackingController extends GetxController {
   AddressService addressService = AddressService();
   Timer? _mainTimer;
 
-  late AddressModel addressModel;
+  AddressModel _addressModel = AddressModel();
 
   @override
   void onInit() {
@@ -55,7 +55,7 @@ class LbsTrackingController extends GetxController {
               lat: position.latitude.toString(),
               long: position.longitude.toString(),
             );
-            addressModel = await addressService.getDetailAddress(
+            _addressModel = await addressService.getDetailAddress(
               latitude: _curLat,
               longitude: _curLong,
             );
@@ -66,18 +66,18 @@ class LbsTrackingController extends GetxController {
                 lat: position.latitude.toString(),
                 long: position.longitude.toString(),
               );
-              addressModel = await addressService.getDetailAddress(
+              _addressModel = await addressService.getDetailAddress(
                 latitude: _curLat,
                 longitude: _curLong,
               );
             }
           }
-
+          
           addressInfo.value = _templateAddressInfo(
-            desa: addressModel.desa,
-            kabupaten: addressModel.kabupaten,
-            provinsi: addressModel.provinsi,
-            negara: addressModel.negara,
+            desa: _addressModel.desa,
+            kabupaten: _addressModel.kabupaten,
+            provinsi: _addressModel.provinsi,
+            negara: _addressModel.negara,
           );
         } catch (e) {
           _setCurrentEmpty();

@@ -5,10 +5,10 @@ class AddressModel {
   String negara;
 
   AddressModel({
-    required this.desa,
-    required this.kabupaten,
-    required this.provinsi,
-    required this.negara,
+    this.desa = '',
+    this.kabupaten = '',
+    this.provinsi = '',
+    this.negara = '',
   });
 
   factory AddressModel.fromMap(Map<String, dynamic> map) {
