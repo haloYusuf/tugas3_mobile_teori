@@ -1,3 +1,0 @@
-folder ini berisi kumpulan folder sesuai nama features
-
-disini, tiap 1 folder merupakan 1 feature yang mana berisi view, controller, dan binding.
