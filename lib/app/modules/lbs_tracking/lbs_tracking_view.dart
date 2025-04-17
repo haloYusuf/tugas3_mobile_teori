@@ -99,6 +99,7 @@ class LbsTrackingView extends StatelessWidget {
                 Obx(
                   () => Text(
                     controller.addressInfo.value,
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ],

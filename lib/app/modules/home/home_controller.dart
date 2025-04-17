@@ -14,7 +14,6 @@ class HomeController extends GetxController {
     RouteName.siteRecommend,
   ];
 
-  //Handle All Content
   String getHeaderContent() {
     return 'Welcome, ${_session.getUsername()}';
   }
@@ -36,7 +35,6 @@ class HomeController extends GetxController {
     );
   }
 
-  //Handle Action from User
   void handleLogOut() {
     Get.dialog(
       AlertDialog(

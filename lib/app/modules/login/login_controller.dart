@@ -5,16 +5,13 @@ import 'package:tugas3_mobile_teori/core/constants/color_constant.dart';
 import 'package:tugas3_mobile_teori/core/services/session_service.dart';
 
 class LoginController extends GetxController {
-  //TextField Controller
   final userNameController = TextEditingController();
   final passController = TextEditingController();
 
-  //TextField Behavior
   final _isVisible = false.obs;
   final _isUserNameError = false.obs;
   final _isPassError = false.obs;
 
-  //Get Private Data
   bool getVisibilityStatus() {
     return _isVisible.value;
   }
@@ -27,7 +24,6 @@ class LoginController extends GetxController {
     return _isPassError.value;
   }
 
-  //Handle Action from User
   void handleVisibility() {
     _isVisible.value = !_isVisible.value;
   }
