@@ -17,10 +17,6 @@ class MemberView extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Get.back(),
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
