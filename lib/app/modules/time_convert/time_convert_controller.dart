@@ -73,6 +73,10 @@ class TimeConvertController extends GetxController {
     );
   }
 
+  void handleBack(){
+    Get.back();
+  }
+
   void handleHitung() {
     var value = inputController.text;
 

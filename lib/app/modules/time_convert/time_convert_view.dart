@@ -13,7 +13,7 @@ class TimeConvertView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: controller.handleBack,
           icon: Icon(
             Icons.arrow_back,
           ),
