@@ -16,7 +16,7 @@ class AboutView extends StatelessWidget {
       length: helpContent.length,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Bantuan Page'),
+          title: const Text('About this App'),
           actions: [
             IconButton(
               onPressed: () {

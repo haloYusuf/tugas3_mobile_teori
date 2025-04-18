@@ -30,15 +30,14 @@ class AboutModel {
 - Buka menu LBS Tracker yang ada di Home Page.
 - Izinkan aplikasi mengakses lokasi di device masing-masing.
 - Aplikasi akan menampilkan lokasi Anda saat ini di peta.
-- Menu ini digunakan untuk melacak lokasi pengguna.
+- Menu ini digunakan untuk melacak lokasi anda.
         """,
       ),
       AboutModel(
         title: "Time Conversion",
         content: """
 - Buka menu Time Conversion yang ada di Home Page.
-- Pilih jenis konversi (misalnya ...).
-- Masukkan nilai angka pada kolom input.
+- Masukkan total waktu tahun pada kolom input.
 - Tekan tombol Konversi.
 - Hasil konversi waktu akan muncul di bawahnya.
         """,
