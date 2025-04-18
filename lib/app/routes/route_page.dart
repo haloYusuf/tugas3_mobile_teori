@@ -3,6 +3,7 @@ import 'package:tugas3_mobile_teori/app/modules/lbs_tracking/lbs_tracking_view.d
 import 'package:tugas3_mobile_teori/app/modules/login/login_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/main/main_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/number/number_view.dart';
+import 'package:tugas3_mobile_teori/app/modules/site_favorite/site_favorite_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/site_recommend/site_recommend_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/stopwatch/stopwatch_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/time_convert/time_convert_view.dart';
@@ -37,6 +38,10 @@ class RoutePage {
     GetPage(
       name: RouteName.siteRecommend,
       page: () => SiteRecommendView(),
+    ),
+    GetPage(
+      name: RouteName.siteFavorite,
+      page: () => SiteFavoriteView(),
     ),
   ];
 }

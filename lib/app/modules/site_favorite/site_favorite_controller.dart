@@ -1,34 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tugas3_mobile_teori/app/models/site_model.dart';
-import 'package:tugas3_mobile_teori/app/routes/route_name.dart';
 import 'package:tugas3_mobile_teori/core/constants/color_constant.dart';
 import 'package:tugas3_mobile_teori/core/services/session_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SiteRecommendController extends GetxController {
+class SiteFavoriteController extends GetxController {
   final _session = SessionService();
-  final _refreshTrigger = <int>[].obs;
+  final _dataFav = <SiteModel>[].obs;
 
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    _initCurrentFav();
+    _setInitialData();
   }
 
-  void _initCurrentFav() {
-    _refreshTrigger.value = List.generate(
-      SiteModel.getAllSiteData.length,
-      (index) => _session.getFav().contains(index) ? 1 : 0,
+  void _setInitialData() {
+    final sessionData = _session.getFav();
+    _dataFav.value = List.generate(
+      sessionData.length,
+      (index) => SiteModel.getAllSiteData[sessionData[index]],
     );
+  }
+
+  int getDataLength() {
+    return _dataFav.length;
   }
 
   Widget getSetCard({
     required BuildContext context,
     required int index,
   }) {
-    SiteModel siteModel = SiteModel.getAllSiteData[index];
+    SiteModel siteModel = _dataFav[index];
 
     return Padding(
       padding: const EdgeInsets.symmetric(
@@ -114,27 +118,6 @@ class SiteRecommendController extends GetxController {
             fontWeight: FontWeight.w500,
           ),
         ),
-        trailing: IconButton(
-          onPressed: () {
-            if (_refreshTrigger[index] == 0) {
-              _refreshTrigger[index] = 1;
-              _session.addFav(index);
-            } else {
-              _refreshTrigger[index] = 0;
-              _session.removeFav(index);
-            }
-          },
-          icon: Obx(
-            () => Icon(
-              _refreshTrigger[index] == 1
-                  ? Icons.favorite
-                  : Icons.favorite_border,
-              color: _refreshTrigger[index] == 1
-                  ? Colors.black
-                  : ColorConstant.onPrimaryColor,
-            ),
-          ),
-        ),
       ),
     );
   }
@@ -155,15 +138,7 @@ class SiteRecommendController extends GetxController {
     }
   }
 
-  int getAllSiteDataLength() {
-    return SiteModel.getAllSiteData.length;
-  }
-
   void handleBack() {
     Get.back();
-  }
-
-  void handleFavClick() {
-    Get.toNamed(RouteName.siteFavorite);
   }
 }

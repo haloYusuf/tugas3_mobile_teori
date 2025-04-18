@@ -6,6 +6,7 @@ class SessionService {
   static const _isLoggedIn = 'is_logged_in';
   static const _username = 'username';
   static const _stopwatchState = 'stopwatch_state';
+  static const _favIndex = 'favorite_index';
 
   bool isLoggedIn() {
     return _storage.read(_isLoggedIn) ?? false;
@@ -22,6 +23,7 @@ class SessionService {
     await _storage.remove(_username);
     await _storage.write(_isLoggedIn, false);
     await _storage.remove(_stopwatchState);
+    await _storage.remove(_favIndex);
   }
 
   String getUsername() {
@@ -34,5 +36,31 @@ class SessionService {
 
   Map<String, dynamic>? getStopwatchState() {
     return _storage.read(_stopwatchState);
+  }
+
+  List<int> getFav() {
+    final rawFav = _storage.read<List>(_favIndex);
+    return rawFav?.cast<int>() ?? [];
+  }
+
+  void saveFav(List<int> list) {
+    _storage.write(_favIndex, list);
+  }
+
+  void addFav(int index) {
+    final current = getFav();
+    current.add(index);
+    saveFav(current);
+  }
+
+  bool isFav(int index) {
+    final current = getFav();
+    return current.contains(index);
+  }
+
+  void removeFav(int index) {
+    final current = getFav();
+    current.remove(index);
+    saveFav(current);
   }
 }

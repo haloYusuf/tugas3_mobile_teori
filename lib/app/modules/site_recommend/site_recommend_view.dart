@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tugas3_mobile_teori/app/modules/site_recommend/site_recommend_controller.dart';
+import 'package:tugas3_mobile_teori/core/constants/color_constant.dart';
 
 class SiteRecommendView extends StatelessWidget {
   const SiteRecommendView({super.key});
@@ -22,12 +23,23 @@ class SiteRecommendView extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: controller.handleFavClick,
             icon: Icon(
-              Icons.favorite_border,
+              Icons.favorite,
+              color: ColorConstant.onPrimaryColor,
             ),
           ),
         ],
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(12),
+        child: ListView.builder(
+          itemCount: controller.getAllSiteDataLength(),
+          itemBuilder: (context, index) => controller.getSetCard(
+            context: context,
+            index: index,
+          ),
+        ),
       ),
     );
   }

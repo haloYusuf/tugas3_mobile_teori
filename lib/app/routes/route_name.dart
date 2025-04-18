@@ -6,4 +6,5 @@ class RouteName {
   static String lbsTracking = '/lbs-tracking';
   static String timeConvert = '/timeConvert';
   static String siteRecommend = '/site-recommend';
+  static String siteFavorite = '/site-favorite';
 }
