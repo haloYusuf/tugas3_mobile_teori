@@ -30,12 +30,16 @@ class SessionService {
     return _storage.read(_username) ?? '';
   }
 
-  Future saveStopwatchState(Map<String, dynamic> state) async {
-    await _storage.write(_stopwatchState, state);
-  }
+Future saveStopwatchState(Map<String, dynamic> state) async {
+  await _storage.write(_stopwatchState, state);
+}
 
-  Map<String, dynamic>? getStopwatchState() {
-    return _storage.read(_stopwatchState);
+Map<String, dynamic>? getStopwatchState() {
+  return _storage.read(_stopwatchState);
+}
+
+  Future removeStopwatchState() async {
+    await _storage.remove(_stopwatchState);
   }
 
   List<int> getFav() {
