@@ -19,7 +19,7 @@ class SiteRecommendView extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Site Recomendations',
+          'Site Recommendations',
         ),
         actions: [
           IconButton(
