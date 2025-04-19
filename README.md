@@ -1,6 +1,6 @@
 # MultiApp Project
 
-Ini merupakan project Teknologi Mobile Teori Informatika 2024/2025 kelas IF-E dengan developer  :
+Ini merupakan project Teknologi Mobile Teori Informatika 2024/2025 kelas IF-E dengan anggota developer  :
 
 - [Erlyta Rachma A.  (123220008)](https://github.com/alnzzz17)
 - [Salma Hanifa      (123220019)](https://github.com/salmahnf)
