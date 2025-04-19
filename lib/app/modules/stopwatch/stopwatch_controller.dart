@@ -46,7 +46,6 @@ class StopwatchController extends GetxController {
       );
 
       if (isRunning.value) {
-        // Hitung waktu yang telah berlalu sejak terakhir disimpan
         final now = DateTime.now();
         final lastSaved = DateTime.fromMillisecondsSinceEpoch(savedState['lastSavedTime'] ?? now.millisecondsSinceEpoch);
         final elapsedSinceSave = now.difference(lastSaved);
