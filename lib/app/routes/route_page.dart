@@ -5,12 +5,17 @@ import 'package:tugas3_mobile_teori/app/modules/main/main_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/number/number_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/site_favorite/site_favorite_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/site_recommend/site_recommend_view.dart';
+import 'package:tugas3_mobile_teori/app/modules/splash/splash_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/stopwatch/stopwatch_view.dart';
 import 'package:tugas3_mobile_teori/app/modules/time_convert/time_convert_view.dart';
 import 'package:tugas3_mobile_teori/app/routes/route_name.dart';
 
 class RoutePage {
   static List<GetPage<dynamic>> routes = [
+    GetPage(
+      name: RouteName.splash,
+      page: () => SplashView(),
+    ),
     GetPage(
       name: RouteName.login,
       page: () => LoginView(),

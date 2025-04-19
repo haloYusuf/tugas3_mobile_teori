@@ -11,7 +11,6 @@ class SiteFavoriteController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     _setInitialData();
   }

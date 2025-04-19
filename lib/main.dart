@@ -19,13 +19,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final session = Get.find<SessionService>();
-
     return GetMaterialApp(
       title: 'MultiApp',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
-      initialRoute: session.isLoggedIn() ? RouteName.main : RouteName.login,
+      initialRoute: RouteName.splash,
       getPages: RoutePage.routes,
     );
   }

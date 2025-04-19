@@ -12,7 +12,6 @@ class SiteRecommendController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
     _initCurrentFav();
   }
