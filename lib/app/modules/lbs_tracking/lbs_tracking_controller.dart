@@ -61,7 +61,8 @@ class LbsTrackingController extends GetxController {
             );
           } else {
             if (_curLat != position.latitude.toString() ||
-                _curLong != position.longitude.toString()) {
+                _curLong != position.longitude.toString() ||
+                addressInfo.value == 'Searching...') {
               _setCurrentValue(
                 lat: position.latitude.toString(),
                 long: position.longitude.toString(),
@@ -72,7 +73,7 @@ class LbsTrackingController extends GetxController {
               );
             }
           }
-          
+
           addressInfo.value = _templateAddressInfo(
             desa: _addressModel.desa,
             kabupaten: _addressModel.kabupaten,
